@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Paragraph, Box, base } from 'grommet';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 const BinderContainer = styled.div`
   display: flex;
@@ -13,6 +12,11 @@ const BinderContainer = styled.div`
   &:hover {
     background: black;
     cursor: pointer;
+  }
+
+  @media (max-width: 780px) { 
+    width: 3.5em;
+  }
 `;
 
 /*&:hover {
@@ -25,6 +29,10 @@ const BinderLabel = styled.div`
   width: 2em;
   height: 45%;
   background: white;
+
+  @media (max-width: 800px) { 
+    display: none;
+  }
 `;
 
 const AccentContainer = styled.div`
@@ -32,6 +40,10 @@ const AccentContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   flex-grow: 2;
+
+  @media (max-width: 800px) { 
+    display: none;
+  }
 `;
 
 const BinderAccent = styled.div`
