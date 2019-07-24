@@ -18,7 +18,7 @@ const LinkIcon = styled.button`
   }
 `;
 
-const NoteParagraph = styled(Paragraph)`
+const NoteText = styled.span`
 `;
 
 const sanitizer = dompurify.sanitize;
@@ -26,15 +26,15 @@ const sanitizer = dompurify.sanitize;
 export default class PlainNote extends Component {
 
   onLinkClick = () => {
-    window.open(this.props.url, "_blank");
+    window.open(this.props.src, "_blank");
   }
 
   render() {
     return (
-      <Box pad="small" background="brand" border={{ color: 'brand', size: '' }} >
-        <LinkIcon onClick={this.onLinkClick}><Link/></LinkIcon>
-        <Box pad={{ bottom: 'x-small', horizontal: 'small'}}>
-          <NoteParagraph margin="none" dangerouslySetInnerHTML={{__html: sanitizer(this.props.content)}} />
+      <Box pad="small" background="brand" border={{ color: "brand", size: "" }} >
+        <LinkIcon onClick={this.onLinkClick} title={this.props.src}><Link/></LinkIcon>
+        <Box pad={{ horizontal: "small"}}>
+          <NoteText margin="none" dangerouslySetInnerHTML={{__html: sanitizer(this.props.text)}} />
         </Box>
       </Box>
     );
