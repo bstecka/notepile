@@ -18,7 +18,7 @@ export default class EditNote extends Component {
 
     constructor(props) {
         super(props);
-        const html = `${this.props.content}`
+        const html = `${this.props.text}`
         const contentState = stateFromHTML(html);
         this.state = { 
             editorState: EditorState.createWithContent(contentState)
@@ -109,7 +109,7 @@ export default class EditNote extends Component {
                 <Box
                 background="white"
                 round="xsmall"
-                border={{ color: 'brand', size: 'none' }}
+                border={{ color: "brand", size: "none" }}
                 pad="medium"
                 >
                 <Editor 
