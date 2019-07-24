@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Box, Paragraph, Heading, Button, Grommet, base } from 'grommet';
 import { Ascend, Bold, Italic, Underline, List, Code, Checkmark } from 'grommet-icons';
-import {Editor, EditorState, RichUtils, convertFromHTML, ContentState} from 'draft-js';
-import {stateFromHTML} from 'draft-js-import-html';
-import {stateToHTML} from 'draft-js-export-html';
+import { Editor, EditorState, RichUtils, convertFromHTML, ContentState } from 'draft-js';
+import { stateFromHTML } from 'draft-js-import-html';
+import { stateToHTML } from 'draft-js-export-html';
 
 const styleMap = {
     'CODE': {

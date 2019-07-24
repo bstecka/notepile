@@ -1,9 +1,11 @@
 import React from 'react';
 import logo from '../assets/logo.svg';
 import styled from 'styled-components';
-import Note from './Note.js';
-import EditNote from './EditNote.js';
 import NoteGrid from './NoteGrid.js';
+import Binder from './Binder.js';
+import { Paragraph, Box, base } from 'grommet';
+import CategorySelectionArea from './CategorySelectionArea';
+import Header from './Header';
 
 const AppWrapper = styled.div`
 `;
@@ -21,6 +23,7 @@ function Home() {
     <AppWrapper>
       <AppHeader>
       </AppHeader>
+      <Header />
       <NoteGrid/>
     </AppWrapper>
   );
