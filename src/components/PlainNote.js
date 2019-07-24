@@ -18,7 +18,8 @@ const LinkIcon = styled.button`
   }
 `;
 
-const NoteText = styled.span`
+const NoteText = styled.div`
+  font-family: Roboto;
 `;
 
 const sanitizer = dompurify.sanitize;

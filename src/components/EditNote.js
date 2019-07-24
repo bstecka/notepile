@@ -117,8 +117,8 @@ export default class EditNote extends Component {
                 customStyleMap={styleMap}
                 handleKeyCommand={this.handleKeyCommand}
                 onChange={this.onChange} />
-                </Box>
             </Box>
+        </Box>
       );
     }
 }

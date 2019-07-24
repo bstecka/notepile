@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Box, Stack, Menu, Button } from 'grommet';
-import { Link, Checkmark } from 'grommet-icons';
+import { Box, Menu, Button } from 'grommet';
+import { Checkmark } from 'grommet-icons';
 import PlainNote from './PlainNote.js';
 import EditNote from './EditNote.js';
 import api from '../api'
