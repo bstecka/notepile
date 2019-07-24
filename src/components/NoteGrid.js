@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { Box, Stack, Menu, Button } from 'grommet';
-import styled from 'styled-components';
+import { Box } from 'grommet';
 import Note from './Note.js';
+import EmptyNotice from './EmptyNotice.js'
 import api from '../api'
 
 export default class NoteGrid extends Component {
@@ -20,9 +20,7 @@ export default class NoteGrid extends Component {
     }
 
     clearRemovedNote = (noteId) => {
-      console.log('clearNote');
       const clearedNotes = this.state.notes.filter(note => note.id !== noteId);
-      console.log(clearedNotes);
       this.setState({ notes: clearedNotes });
     }
 
@@ -31,10 +29,13 @@ export default class NoteGrid extends Component {
         <Box
         direction="row"
         border={{ size: 'none' }}
-        wrap="true"
+        wrap
         justify="center"
         >
-        { this.state.notes ? this.state.notes.map((note) => <Note key={note.id} noteData={note} clearRemovedNote={this.clearRemovedNote} />) : '' }
+        { Array.isArray(this.state.notes) && this.state.notes.length ? 
+          this.state.notes.map((note) => <Note key={note.id} noteData={note} clearRemovedNote={this.clearRemovedNote} />) :
+          <EmptyNotice />
+        }
         </Box>
       );
     }
